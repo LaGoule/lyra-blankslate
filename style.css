@@ -1,0 +1,227 @@
+/*
+Theme Name: Lyra BlankSlate
+Template: BlankSlate
+Author: Damien Beuchat
+Version: 0.1
+*/
+
+
+/* ------------------------------------ */
+/* Import */
+/* ------------------------------------ */
+
+@font-face {
+  font-family: "Bandit";
+  src: url("assets/fonts/bandit/Bandit-Condensed-trial.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ------------------------------------ */
+/* Variables */
+/* ------------------------------------ */
+
+:root {
+  --color-base: #f8f8f8;
+  --color-contrast: #080808;
+  --color-tint-light: #808080;
+  --color-accent-1: #3259FF;
+  --color-accent-2: #4FF2DF;
+  --color-accent-3: #EABCFF;
+  --color-accent-4: #FE915A;
+  --color-accent-5: #FFFDC2;
+
+  --font-family-headline: 'Bandit', sans-serif;
+  --font-family-body: 'Inter', sans-serif;
+
+  --spacing-small: 9px;
+  --spacing-medium: 20px;
+  --spacing-large: 40px;
+  --spacing-xlarge: 70px;
+
+  --width-max-content: 1400px;
+}
+
+/* ------------------------------------ */
+/* Initialization */
+/* ------------------------------------ */
+
+body {
+  background-color: var(--color-base);
+  color: var(--color-contrast);
+  font-family: var(--font-family-body);
+  padding: 0;
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-headline);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+a {
+  color: var(--color-contrast);
+  text-decoration: none;
+}
+a:visited {
+}
+
+ul,
+ol {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* ------------------------------------ */
+/* Components */
+/* ------------------------------------ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-small);
+  padding: 11px 24px 13px 24px;
+  border-radius: 40px;
+  font-weight: 400;
+
+  cursor: pointer;
+}
+.btn-primary {
+  color: var(--color-contrast);
+  background: linear-gradient(to right, var(--color-accent-3) 0%, var(--color-accent-2) 100%);
+}
+.btn-secondary {
+  color: var(--color-base);
+  outline: var(--color-base) 1px solid;
+}
+.btn ion-icon {
+  position: relative;
+  top: 0px;
+}
+
+/* ------------------------------------ */
+/* Layout */
+/* ------------------------------------ */
+
+.ls-section{
+  position: relative;
+}
+
+.container {
+  max-width: var(--width-max-content);
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 var(--spacing-large);
+  gap: var(--spacing-xlarge);
+
+  display: flex;
+}
+.container.row {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.container.column {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.full-width {
+  max-width: 100%;
+}
+.wide {
+  max-width: 1280px;
+}
+.no-padding {
+  padding: 0;
+}
+.no-margin {
+  margin: 0;
+}
+
+/* ------------------------------------ */
+/* Sections */
+/* ------------------------------------ */
+
+/* Header */
+
+.ls-section.section-header {
+  background-color: rgba(8, 8, 8, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-blend-mode: multiply;
+  color: var(--color-base);
+  box-sizing: content-box;
+
+  height: 5rem;
+  border-radius: var(--spacing-medium);
+
+  position: fixed;
+  top: var(--spacing-small);
+  left: var(--spacing-small);
+  right: var(--spacing-small);
+
+  width: calc( 100vw - var(--spacing-small) * 2);
+  z-index: 1000;
+}
+
+.section-header a {
+  color: var(--color-base);
+}
+
+.main-logo {
+  width: 100px;
+  height: auto;
+}
+
+.social-link{
+  padding: 12px;
+}
+
+/* Hero */
+
+.ls-section.section-hero {
+  background-image: url('assets/images/hero_background.jpg');
+  background-size: cover;
+  background-position: center;
+
+  color: var(--color-base);
+
+  padding-top: 22em; /* TODO: Corriger */
+}
+
+.ls-section.section-hero .container{
+  width: 100vw;
+}
+
+.hero-content{
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-medium);
+}
+
+.hero-headline{
+  font-family: var(--font-family-body);
+  text-transform: none;
+  font-size: 3.5rem;
+  font-weight: 600;
+  line-height: 105%;
+  letter-spacing: 0;
+}
+
+.hero-cta{
+  display: flex;
+  gap: var(--spacing-medium);
+}
+
+.hero-decoration{
+  text-align: center;
+  font-weight: 700;
+  white-space: nowrap;
+  display: inline-block;
+}
