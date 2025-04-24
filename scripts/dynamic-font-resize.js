@@ -14,7 +14,11 @@ document.addEventListener("DOMContentLoaded", function () {
       }
   
       // Réduit légèrement pour éviter un débordement
-      heroDecoration.style.fontSize = `${fontSize - 1}px`;
+      //heroDecoration.style.fontSize = `${fontSize - 0}px`;
+
+      // Décalage vers la gauche pour corriger le débordement
+      const offset = 6; // Ajustez cette valeur si nécessaire
+      heroDecoration.style.transform = `translateX(-${offset}px)`;
     }
   
     // Ajuste la taille de la police au chargement et lors du redimensionnement de la fenêtre

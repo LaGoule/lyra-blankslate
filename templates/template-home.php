@@ -6,13 +6,20 @@ Template Name: Page d'Accueil
 
 <?php get_header(); ?>
 
-<!--
-<main class="container column mx-auto">
-    <h1><?php the_title(); ?></h1>
-    <p>Bienvenue sur votre page d'accueil personnalisée.</p>
-</main>
--->
+<?php //get_template_part('parts/projects-cards'); ?>
 
-<?php get_template_part('parts/hero'); ?>
+<?php //get_template_part('parts/contact-section'); ?>
+
+<?php
+    // ACF - Flexible Content fields.
+    $sections = get_field( 'lyra_home_layout' );
+
+    if ( $sections ) :
+        foreach ( $sections as $section ) :
+            $template = str_replace( '_', '-', $section['acf_fc_layout'] );
+            get_template_part( 'parts/' . $template, '', $section );
+        endforeach;
+    endif;
+?>
 
 <?php get_footer(); ?>
