@@ -6,10 +6,6 @@ Template Name: Page d'Accueil
 
 <?php get_header(); ?>
 
-<?php //get_template_part('parts/projects-cards'); ?>
-
-<?php //get_template_part('parts/contact-section'); ?>
-
 <?php
     // ACF - Flexible Content fields.
     $sections = get_field( 'lyra_home_layout' );

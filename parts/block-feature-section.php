@@ -1,6 +1,6 @@
 <?php 
 /* 
-* Feature Section
+* Block: Feature Section
 */
 ?>
 
@@ -14,7 +14,7 @@
 
 <section id="feature-section" class="ls-section section-feature">
     <div class="container column">
-        <div class="section-header container row no-padding no-margin align-start gap-30">
+        <div class="section-header-dual no-padding no-margin align-start gap-30">
             <h2 class="section-header-headline flex-basis-50">
                 <?php echo esc_html($headline); ?>
             </h2>
@@ -36,7 +36,7 @@
                         <div class="feature-card gap-20">
                             <a href="<?php echo esc_url($link); ?>" class="feature-card-link">
                                 <div class="feature-card-block" style="background-image: url('<?php echo esc_url($background_image); ?>');">
-                                    <h3 class="feature-card-title">
+                                    <h3 class="feature-card-title alt">
                                         <?php echo esc_html($title); ?>
                                     </h3>
                                 </div>

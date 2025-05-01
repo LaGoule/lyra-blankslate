@@ -1,6 +1,6 @@
 <?php 
 /* 
-* Logo Cloud
+* Block: Logo Cloud
 */
 ?>
 
@@ -12,9 +12,9 @@
 ?>
 
 <section id="logo-cloud" class="ls-section section-logo-cloud">
-    <div class="container column">
+    <div class="container column align-center">
         <div class="section-header container">
-            <h2 class="section-header-headline alternative">
+            <h2 class="section-header-headline alt">
                 <?php echo esc_html($headline); ?>
             </h2>
         </div>
@@ -31,6 +31,9 @@
                             $image_id = $image['id'] ?? '';
                             $metadata = wp_get_attachment_metadata($image_id);
 
+                            if (!$metadata) {
+                                continue; // Skip if metadata is not available
+                            }
                             $width = $metadata['width'];
                             $height = $metadata['height'];
                         ?>

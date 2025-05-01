@@ -1,4 +1,29 @@
 <?php 
+// Theme setup
+function register_my_menus() {
+    register_nav_menus(
+      array(
+        'header-main-menu' => __( 'Header Main Menu' ),
+        'footer-menu' => __( 'Footer Menu' ) 
+      )
+    );
+  }
+add_action( 'init', 'register_my_menus' );
+
+// Enqueue scripts
+function lyra_enqueue_scripts() {
+  // Script for dynamic font resize
+  // This script will be responsible for resizing the font based on the viewport size 
+  // Not used in the current version, but can be uncommented if needed
+  // wp_enqueue_script('dynamic-font-resize', get_template_directory_uri() . '/scripts/dynamic-font-resize.js', array('jquery'), null, true);
+  // Script for menu toggle
+  wp_enqueue_script('menu-toggle', get_template_directory_uri() . '/scripts/menu-toggle.js', array(), null, true);
+  // Script for swiper
+  wp_enqueue_style('swiper-css', 'https://unpkg.com/swiper/swiper-bundle.min.css');
+  wp_enqueue_script('swiper-js', 'https://unpkg.com/swiper/swiper-bundle.min.js', array(), null, true);
+  wp_enqueue_script('swiper-init', get_template_directory_uri() . '/scripts/swiper-init.js', array('swiper-js'), null, true);
+}
+add_action('wp_enqueue_scripts', 'lyra_enqueue_scripts');
 
 // Enqueue stylesheets
 function theme_styles() {
@@ -12,17 +37,17 @@ function inter_font() {
 }
 add_action('wp_enqueue_scripts', 'inter_font');
 
-// Import Scripts in scripts/dynamic-font-resize.js
-function dynamic_font_resize() {
-    wp_enqueue_script('dynamic-font-resize', get_template_directory_uri() . '/scripts/dynamic-font-resize.js', array('jquery'), null, true);
-}
-add_action('wp_enqueue_scripts', 'dynamic_font_resize');
-
-// Import ion icons
+// Import Ion icons
 function enqueue_ionicons_scripts() {
     wp_enqueue_script('ionicons-esm', 'https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js', array(), null, true);
     wp_enqueue_script('ionicons-nomodule', 'https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js', array(), null, true);
 }
 add_action('wp_enqueue_scripts', 'enqueue_ionicons_scripts');
 
-?>
+// Add support for post thumbnails
+function enable_post_thumbnail()
+{
+  add_theme_support('post-thumbnails');
+  set_post_thumbnail_size( 1280, 720 );
+};
+add_action('after_setup_theme', 'enable_post_thumbnail');
