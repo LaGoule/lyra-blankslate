@@ -14,18 +14,18 @@
         </div>
     <?php //endif; ?>
     <?php //if (get_field('show_contact_us', 'option')) : ?>
-        <div class="container column">
-            <?php // get_template_part('parts/footer-contact-us'); ?>
+        <div class="container column align-stretch">
+            <?php get_template_part('parts/footer-contact-us'); ?>
         </div>
     <?php //endif; ?>
     <?php //if (get_field('show_footer_nav', 'option')) : ?>
-        <div class="container column">
-            <?php // get_template_part('parts/footer-nav'); ?>
+        <div class="footer-nav-container container column full-width no-padding">
+            <?php get_template_part('parts/footer-nav'); ?>
         </div>
     <?php //endif; ?>
     <?php //if (get_field('show_impressum', 'option')) : ?>
         <div class="container column">
-            <?php // get_template_part('parts/footer-impressum'); ?>
+            <?php get_template_part('parts/footer-impressum'); ?>
         </div>
     <?php //endif; ?>
 </footer>

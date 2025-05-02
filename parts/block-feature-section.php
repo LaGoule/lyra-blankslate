@@ -14,7 +14,7 @@
 
 <section id="feature-section" class="ls-section section-feature">
     <div class="container column">
-        <div class="section-header-dual no-padding no-margin align-start gap-30">
+        <div class="section-dual no-padding no-margin align-start gap-30">
             <h2 class="section-header-headline flex-basis-50">
                 <?php echo esc_html($headline); ?>
             </h2>
