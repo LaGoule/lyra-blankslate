@@ -656,6 +656,9 @@ textarea {
   z-index: -1;
   pointer-events: none;
 
+  width: 200vw;
+  margin: 0 auto;
+
   background: 
     radial-gradient(circle at 50% 20%, var(--color-base) 0%, transparent 40%),
     linear-gradient(to bottom, 
@@ -803,7 +806,7 @@ textarea {
 
 .footer-contact-us {
   background-image: url(assets/images/constellation.png);
-  background-position: bottom 80px left 160px;
+  background-position: bottom 40px left 170px;
   background-repeat: no-repeat;
   background-size: 97.57px 144.22px;
 }
@@ -966,8 +969,11 @@ textarea {
 
 .footer-impressum {
   align-self: stretch;
-  padding: var(--spacing-medium) 0 var(--spacing-large) 0;
+  padding: 20px 0 var(--spacing-large) 0;
   color: var(--color-tint-light);
+
+  font-size: .75rem;
+  line-height: 18px;
 
   display: flex;
   flex-direction: column;
@@ -980,6 +986,14 @@ textarea {
 .footer-impressum .impressum{
   margin: 0 auto;
   text-align: center;
+  line-height: 160%;
+}
+
+.separator-desktop {
+  display: inline;
+}
+.separator-mobile {
+  display: none;
 }
 
 /* ------------------------------------ */
@@ -1034,7 +1048,6 @@ textarea {
     --canvas-margin: var(--spacing-medium);
   }
 
-
   .section-dual {
     flex-direction: column;
     gap: var(--spacing-large);
@@ -1046,9 +1059,44 @@ textarea {
   .feature-cards-container {
     grid-template-columns: repeat(2, 1fr); /* 2 colonnes pour les écrans moyens */
   }
-
+  
+  .footer-contact-us {
+    background-position: top 330px right 20px;
+  }
   .contact-form{
     width: calc(100% - (20px * 2) + var(--canvas-margin) * 2);
+  }
+  .footer-nav-container{
+    padding: 0 var(--canvas-margin);
+    /* width: calc(100% - (var(--canvas-margin) * 2)); */
+    position: relative;
+  }
+  .footer-nav {
+    position: static;
+    width: calc(100%);
+  }
+  .footer-nav .container.row {
+    flex-direction: column;
+    gap: 60px;
+    padding: 1.25rem 0  0.625rem 0;
+  }
+  .footer-cities{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+  .footer-socials{
+    padding: 20px 0;
+  }
+  .footer-impressum {
+    padding: 30px 0 70px 0;
+  }
+  .separator-desktop {
+      display: none;
+  }
+  .separator-mobile {
+      display: inline;
   }
 }
 @media (max-width: 720px) {
@@ -1074,10 +1122,13 @@ textarea {
   textarea {
     width: calc(100% - 24px * 2);
   }
-
+  .contact-form form {
+    padding: 15px;
+    border-radius: 20px;
+  }
+}
 @media (max-width: 520px) {
   .logo-cloud-logos{
     grid-template-columns: repeat(auto-fit, calc((100% - 5px) / 2));
   }
-}
 }
