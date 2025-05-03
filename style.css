@@ -656,11 +656,12 @@ textarea {
   z-index: -1;
   pointer-events: none;
 
-  width: 200vw;
-  margin: 0 auto;
+
+  left:-50%;
+  right: -50%;
 
   background: 
-    radial-gradient(circle at 50% 20%, var(--color-base) 0%, transparent 40%),
+    /* radial-gradient(circle at 50% 30%, var(--color-base) 0%, transparent 20%), */
     linear-gradient(to bottom, 
       var(--color-base) 65%, 
       var(--color-accent-2) 70%, 
@@ -676,6 +677,7 @@ textarea {
 #content .ls-section:last-of-type {
   position: relative; /* Nécessaire pour que le pseudo-élément soit positionné correctement */
   padding-bottom: 16rem;
+  overflow: hidden;
 }
 
 /* ---------- Case studies ---------- */
@@ -1066,6 +1068,7 @@ textarea {
   .contact-form{
     width: calc(100% - (20px * 2) + var(--canvas-margin) * 2);
   }
+
   .footer-nav-container{
     padding: 0 var(--canvas-margin);
     /* width: calc(100% - (var(--canvas-margin) * 2)); */
