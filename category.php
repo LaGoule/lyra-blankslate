@@ -1,10 +1,22 @@
+<?php
+/*
+Template: Category
+*/
+?>
+
 <?php get_header(); ?>
-<header class="header">
-<h1 class="entry-title" itemprop="name"><?php single_term_title(); ?></h1>
-<div class="archive-meta" itemprop="description"><?php if ( '' != get_the_archive_description() ) { echo esc_html( get_the_archive_description() ); } ?></div>
-</header>
-<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-<?php get_template_part( 'entry' ); ?>
-<?php endwhile; endif; ?>
-<?php get_template_part( 'nav', 'below' ); ?>
+
+<?php
+    // ACF - Flexible Content fields pour la catégorie
+    $category_id = get_queried_object_id(); // Récupère l'ID de la catégorie actuelle
+    $sections = get_field('lyra_page_layout', 'category_' . $category_id); // Récupère le layout ACF pour cette catégorie
+
+    if ($sections) :
+        foreach ($sections as $section) :
+            $template = str_replace('_', '-', $section['acf_fc_layout']);
+            get_template_part('parts/' . $template, '', $section);
+        endforeach;
+    endif;
+?>
+
 <?php get_footer(); ?>
