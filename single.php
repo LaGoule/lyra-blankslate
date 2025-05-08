@@ -1,11 +1,23 @@
-<?php /* ?>
+<?php
+/*
+Template: Single
+*/
+?>
+
 <?php get_header(); ?>
-<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-<?php get_template_part( 'entry' ); ?>
-<?php if ( comments_open() && !post_password_required() ) { comments_template( '', true ); } ?>
-<?php endwhile; endif; ?>
-<footer class="footer">
-<?php get_template_part( 'nav', 'below-single' ); ?>
-</footer>
+
+<?php get_template_part( 'parts/block-hero-section' ); ?>
+
+<?php
+    // ACF - Flexible Content fields.
+    $sections = get_field( 'lyra_page_layout' );
+
+    if ( $sections ) :
+        foreach ( $sections as $section ) :
+            $template = str_replace( '_', '-', $section['acf_fc_layout'] );
+            get_template_part( 'parts/' . $template, '', $section );
+        endforeach;
+    endif;
+?>
+
 <?php get_footer(); ?>
-<?php */ ?>

@@ -12,7 +12,7 @@
 
 <section class="category-posts ls-section">
     <div class="container column">
-        <div class="filter-container">
+        <!-- <div class="filter-container">
             <ul class="filter-list">
                 <li class="filter-item">
                     <a href="#" class="filter-link active">All</a>
@@ -27,7 +27,7 @@
                     <a href="#" class="filter-link">Players</a>
                 </li>
             </ul>
-        </div>
+        </div> -->
 
         <div class="posts-grid">
             <?php if (have_posts()) : ?>

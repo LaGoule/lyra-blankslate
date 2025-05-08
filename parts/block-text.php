@@ -14,7 +14,6 @@
     * bt_title_text
     * bt_text_only
     * bt_tags
-    * bt_intro_case
     */
 
     $headline_size = $args['bt_headline_size'] ?? 'big';
@@ -22,7 +21,6 @@
     $body_text = $args['bt_body_text'] ?? '';
     $tags = $args['bt_tags'] ?? '';
     $credits = $args['bt_credits'] ?? '';
-    $case_specs = $args['bt_case_specs'] ?? '';
 ?>
 
 <?php if ($block_type == 'bt_title_text') : ?>
@@ -79,9 +77,5 @@
         </div>
     </div>
 </section>
-
-<?php elseif ($block_type == 'bt_case_intro') : ?>
-
-    <?php // TODO: Case intro block ?>
 
 <?php endif; ?>

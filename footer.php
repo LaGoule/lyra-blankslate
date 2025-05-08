@@ -24,13 +24,17 @@
 <footer id="footer" class="ls-section section-footer">
 
     <?php 
-        if ( $args && in_array('show_case_studies', $args) ) :
-            get_template_part('parts/footer-case-studies'); 
-        endif; 
+        if (is_single()) {
+            get_template_part('parts/footer-discover-more'); 
+        }
 
-        if ( $args && in_array('show_contact_us', $args) ) : 
+        if ( $args && in_array('show_case_studies', $args) && !is_single() ) {
+            get_template_part('parts/footer-case-studies'); 
+        }
+
+        if ( $args && in_array('show_contact_us', $args) || is_single() ) {
             get_template_part('parts/footer-contact-us');
-        endif;
+        }
 
         get_template_part('parts/footer-nav');
 

@@ -14,12 +14,12 @@
 
 <section id="team-section" class="ls-section section-team ">
     <div class="container column no-padding no-margin full-width gap-30">
-        <div class="section-mono padding-left padding-right normal-width stretch-width gap-20">
+        <div class="section-mono padding-left padding-right normal-width gap-20">
             <h2 class="section-header-headline flex-basis-50"><?php echo $headline ?></h2>
             <div class="section-dual">
-                <p class="section-header-description running-text-low"><?php echo esc_html($description) ?></p>
+                <p class="section-header-description running-text-low flex-basis-50"><?php echo esc_html($description) ?></p>
                 <!-- Here goes the swiper navigation -->
-                <div class="swiper-button-container">
+                <div class="swiper-button-container flex-basis-50">
                     <button class="swiper-button-prev swiper-button-prev-team" aria-label="Previous"></button>
                     <button class="swiper-button-next swiper-button-next-team" aria-label="Next"></button>
                 </div>

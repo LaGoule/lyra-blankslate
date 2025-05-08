@@ -8,7 +8,7 @@
     <section class="footer-case-studies">
         <div class="footer-case-studies-header padding-left padding-right normal-width">
             <h2 class="footer-section-title">Case Studies</h2>
-            <a href="<?php echo esc_url(home_url('/case-studies')); ?>" class="see-all">See all <ion-icon name="arrow-forward-outline"></ion-icon></a>
+            <a href="<?php echo esc_url(home_url('/case-studies')); ?>" class="see-all">See&nbsp;all <ion-icon name="arrow-forward-outline"></ion-icon></a>
         </div>
 
         <div class="case-studies-container swiper-container">

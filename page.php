@@ -6,6 +6,8 @@ Template: Page
 
 <?php get_header(); ?>
 
+<?php get_template_part( 'parts/block-hero-section' ); ?>
+
 <?php
     // ACF - Flexible Content fields.
     $sections = get_field( 'lyra_page_layout' );

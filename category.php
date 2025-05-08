@@ -6,6 +6,8 @@ Template: Category
 
 <?php get_header(); ?>
 
+<?php get_template_part( 'parts/block-hero-section' ); ?>
+
 <?php
     // ACF - Flexible Content fields pour la catégorie
     $category_id = get_queried_object_id(); // Récupère l'ID de la catégorie actuelle
