@@ -17,7 +17,7 @@
         <div class="section-mono padding-left padding-right normal-width gap-20">
             <h2 class="section-header-headline flex-basis-50"><?php echo $headline ?></h2>
             <div class="section-dual">
-                <p class="section-header-description running-text-low flex-basis-50"><?php echo esc_html($description) ?></p>
+                <p class="section-header-description running-text flex-basis-50"><?php echo esc_html($description) ?></p>
                 <!-- Here goes the swiper navigation -->
                 <div class="swiper-button-container flex-basis-50">
                     <button class="swiper-button-prev swiper-button-prev-team" aria-label="Previous"></button>

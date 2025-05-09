@@ -25,7 +25,7 @@ add_action('wp_enqueue_scripts', 'lyra_enqueue_styles');
 // Import fonts
 function lyra_enqueue_fonts() {
   // Inter font
-  wp_enqueue_style('inter-font', 'https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+  wp_enqueue_style('inter-font', 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
   // Import material icons as a font
   wp_enqueue_style('material-icons', 'https://fonts.googleapis.com/icon?family=Material+Icons', array(), null, 'all');
 }

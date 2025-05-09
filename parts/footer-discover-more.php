@@ -11,12 +11,12 @@
             <?php 
                 /*
                 */
-                $previous_article = get_previous_post(); 
-                $next_article = get_next_post();
+                $previous_article = get_next_post();
+                $next_article = get_previous_post(); 
                 $previous_article_url = get_permalink($previous_article);
                 $next_article_url = get_permalink($next_article);
-                $previous_article_image = get_the_post_thumbnail_url($previous_article, 'medium');
-                $next_article_image = get_the_post_thumbnail_url($next_article, 'medium');
+                $previous_article_image = get_the_post_thumbnail_url($previous_article, 'large');
+                $next_article_image = get_the_post_thumbnail_url($next_article, 'large');
                 $previous_article_title = get_the_title($previous_article);
                 $next_article_title = get_the_title($next_article);
             ?>

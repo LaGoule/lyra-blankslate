@@ -31,7 +31,7 @@
                 <h2 class="section-header-headline flex-basis-50 <?php echo $headline_size; ?>">
                     <?php echo $headline; ?>
                 </h2>
-                <div class="section-header-body-text running-text-low flex-basis-50">
+                <div class="section-header-body-text running-text flex-basis-50">
                     <?php echo $body_text; ?>
                 </div>
             </div>
@@ -43,7 +43,7 @@
     <section class="ls-section section-text">
         <div class="container column">
             <div class="section-dual no-padding no-margin align-start gap-30">
-                <div class="section-header-body-text running-text-low flex-basis-50">
+                <div class="section-header-body-text running-text flex-basis-50">
                     <?php echo $body_text; ?>
                 </div>
                 <div class="flex-basis-50">
@@ -61,7 +61,7 @@
                 <?php echo $headline; ?>
             </h2>
             <div class="section-header-tags flex-basis-50">
-                <div class="tags-container running-text-low">
+                <div class="tags-container running-text">
                     <?php if ( $tags ) : ?>
                         <ul class="tags-list">
                             <?php foreach ( $tags as $tag ) : ?>

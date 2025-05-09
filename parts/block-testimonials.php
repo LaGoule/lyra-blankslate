@@ -25,7 +25,7 @@
             <h4 class="testimonial-name">
                 <?php echo $name; ?>
             </h4>
-            <h5 class="testimonial-role running-text-low">
+            <h5 class="testimonial-role running-text">
                 <?php echo $role; ?><br>
                 <?php echo $organisation; ?>
             </h5>

@@ -18,7 +18,7 @@
             <h2 class="section-header-headline flex-basis-50">
                 <?php echo esc_html($headline); ?>
             </h2>
-            <p class="section-header-description running-text-low flex-basis-50">
+            <p class="section-header-description running-text flex-basis-50">
                 <?php echo esc_html($description); ?>
             </p>
         </div>
@@ -35,13 +35,21 @@
 
                         <div class="feature-card gap-20">
                             <a href="<?php echo esc_url($link); ?>" class="feature-card-link">
-                                <div class="feature-card-block" style="background-image: url('<?php echo esc_url($background_image); ?>');">
+                                <div class="feature-card-block">
                                     <h3 class="feature-card-title alt">
                                         <?php echo esc_html($title); ?>
                                     </h3>
+                                    <div class="card-image">
+                                        <?php if (!empty($background_image)) : ?>
+                                            <img src="<?php echo esc_url($background_image); ?>" alt="<?php echo esc_attr($title); ?>">
+                                        <?php endif; ?>
+                                    </div>
+                                    <div class="card-hint">
+                                        <p>Discover</p>
+                                    </div>
                                 </div>
                             </a>
-                            <p class="feature-card-subtitle running-text-low">
+                            <p class="feature-card-subtitle running-text">
                                 <?php echo esc_html($subtitle); ?>
                             </p>
                         </div>

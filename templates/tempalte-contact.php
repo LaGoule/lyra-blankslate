@@ -1,6 +1,6 @@
 <?php
 /*
-Template: Single
+Template Name: Page de Contact
 */
 ?>
 
@@ -17,9 +17,6 @@ Template: Single
             $template = str_replace( '_', '-', $section['acf_fc_layout'] );
             get_template_part( 'parts/' . $template, '', $section );
         endforeach;
-    else :
-        // Fallback content if no sections are defined.
-        get_template_part( 'parts/block-spacer' );
     endif;
 ?>
 

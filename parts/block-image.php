@@ -38,7 +38,7 @@
                     <h2 class="section-image-text-headline">
                         <?php echo $headline; ?>
                     </h2>
-                    <div class="section-image-text-body running-text-low">
+                    <div class="section-image-text-body running-text">
                         <?php echo $body_text; ?>
                     </div>
                 </div>
@@ -50,13 +50,13 @@
 
 <section class="ls-section section-image">
     <div class="container column">
-        <div class="section-dual no-padding no-margin align-start gap-30">
+        <div class="section-dual reverse no-padding no-margin align-start gap-30">
             <!-- Bloc pour le texte -->
             <div class="section-image-text flex-basis-50">
                 <h2 class="section-image-text-headline">
                     <?php echo $headline; ?>
                 </h2>
-                <div class="section-image-text-body running-text-low">
+                <div class="section-image-text-body running-text">
                     <?php echo $body_text; ?>
                 </div>
             </div>
@@ -86,7 +86,7 @@
 
 <section class="ls-section section-image">
     <div class="container column">
-        <div class="section-dual no-padding no-margin align-start gap-30">
+        <div class="section-dual nowrap no-padding no-margin align-start gap-30">
             <!-- Bloc pour l'image 1 -->
             <div class="section-image-image image-container flex-basis-50">
                 <img src="<?php echo esc_url($image_1['url']); ?>" alt="<?php echo esc_attr($image_1['alt']); ?>">
