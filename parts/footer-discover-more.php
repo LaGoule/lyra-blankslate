@@ -21,7 +21,7 @@
                 $next_article_title = get_the_title($next_article);
             ?>
             <!-- Previous and Next Article Cards -->
-            <div class="card-discover-more previous">
+            <div class="card-discover-more previous flex-basis-50">
                 <?php if ($previous_article) : ?>
                     <a href="<?php echo $previous_article_url; ?>" class="card-link">
                         <img src="<?php echo $previous_article_image; ?>" alt="<?php echo $previous_article_title; ?>" class="card-discover-more-image">
@@ -32,7 +32,7 @@
                     </a>
                 <?php endif; ?>
             </div>
-            <div class="card-discover-more next">
+            <div class="card-discover-more next flex-basis-50">
                 <?php if ($next_article) : ?>
                     <a href="<?php echo $next_article_url; ?>" class="card-discover-more-link">
                         <img src="<?php echo $next_article_image; ?>" alt="<?php echo $next_article_title; ?>" class="card-discover-more-image">

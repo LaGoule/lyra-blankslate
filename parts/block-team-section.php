@@ -59,6 +59,25 @@
                         <p>No team members found.</p>
                     <?php endif; ?>
                 </div>
+                <!-- Popup on mobile -->
+                <div id="team-popup" class="team-popup" style="display:none;">
+                    <div class="team-popup-content">
+                        <button class="team-popup-close" aria-label="Fermer"></button>
+                        <img class="team-popup-image" src="" alt="">
+                        <div class="team-popup-info">
+                            <div class="team-popup-header">
+                                <div class="team-popup-name-role">
+                                    <h3 class="team-popup-name"></h3>
+                                    <p class="team-popup-role"></p>
+                                </div>
+                                <a class="team-popup-linkedin" href="#" target="_blank" rel="noopener">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/svg/logo_linkedin.svg" alt="LinkedIn">
+                                </a>
+                            </div>
+                            <div class="team-popup-bio"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

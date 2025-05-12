@@ -31,6 +31,9 @@ Version: 0.1
   --color-accent-3: #EABCFF;
   --color-accent-4: #FE915A;
   --color-accent-5: #FFFDC2;
+  --color-button-gradient: 
+    linear-gradient(100.06deg, #7847ff -23%, rgba(234, 188, 255, 0) 85%),
+    radial-gradient(100% 100% at 80% 00%, rgba(79, 242, 223, 1) 0%, rgb(68, 216, 199) 100%);
 
   --font-family-headline: 'Bandit', sans-serif;
   --font-family-body: 'Inter', sans-serif;
@@ -54,7 +57,7 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  width: 100vw;
+  width: 100%;
   overflow-x: hidden;
   
   background-color: var(--color-base);
@@ -164,9 +167,7 @@ input[type="submit"]::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background:
-  linear-gradient(100.06deg, #7847ff -23%, rgba(234, 188, 255, 0) 85%),
-  radial-gradient(100% 100% at 80% 00%, rgba(79, 242, 223, 1) 0%, rgb(68, 216, 199) 100%);
+  background: var(--color-button-gradient);
   opacity: 1;
   z-index: -1;
 }
@@ -208,8 +209,7 @@ input[type="submit"]:hover::before {
 
   color: var(--color-contrast);
   background: #3259FF;
-  background: linear-gradient(100.06deg, #7847ff -23%, rgba(234, 188, 255, 0) 85%),
-              radial-gradient(100% 100% at 80% 0%, rgba(79, 242, 223, 1) 0%, rgb(68, 216, 199) 100%);
+  background: var(--color-button-gradient);
 
   transition: background 0.3s ease-in-out, opacity 0.2s ease-in-out, height 0.2s ease-in-out, margin-bottom 0.2s ease-in-out;
 }
@@ -220,8 +220,7 @@ input[type="submit"]:hover::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(100.06deg, #7847ff -23%, rgba(234, 188, 255, 0) 85%),
-              radial-gradient(100% 100% at 80% 0%, rgba(79, 242, 223, 1) 0%, rgb(68, 216, 199) 100%);
+  background: var(--color-button-gradient);
   opacity: 1;
   z-index: -1;
   transition: opacity 0.3s ease-in-out;
@@ -282,6 +281,8 @@ textarea {
   line-height: 140%;
   letter-spacing: 0;
 }
+.running-text a {
+}
 .running-text a:before {
   font-family: "Material Icons";
   font-size: 1.25rem;
@@ -289,6 +290,10 @@ textarea {
   display: inline-block;
   padding-right: 15px;
   vertical-align: middle;
+}
+.running-text strong {
+  font-weight: 400;
+  color: var(--color-contrast);
 }
 
 /* ------------------------------------ */
@@ -459,7 +464,7 @@ textarea {
   left: var(--spacing-small);
   right: var(--spacing-small);
 
-  width: calc( 100vw - var(--spacing-small) * 2);
+  width: calc( 100% - var(--spacing-small) * 2);
   z-index: 1000;
 }
 .ls-section.section-header:has(.active) {
@@ -600,7 +605,7 @@ textarea {
   content: '';
   position: absolute;
   left: 0;
-  bottom: -1px;
+  bottom: 0;
   width: 100%;
   height: 100%;
   /* background: 
@@ -612,6 +617,7 @@ textarea {
   background-position: center bottom;
   background-repeat: no-repeat;
   background-size: cover;
+  overflow-x: hidden;
   z-index: 1;
 }
 /* Home is different because of the white text */
@@ -968,19 +974,30 @@ textarea {
   background-color: #EAEAEA;
 
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   cursor: pointer;
 
   height: 40rem;
   width: 20vw;
+
+  transition: height 0.2s 0.2s ease-in-out;
 }
+
+/* .team-container .swiper-wrapper {
+  align-items: flex-start;
+}
+.team-member-card:hover {
+  height: 46rem;
+  transition: height 0.3s ease-in-out;
+} */
+
 .team-member-card-image {
   flex: 1; 
   display: flex;
   align-items: flex-start; 
   justify-content: center; 
   overflow: hidden; 
-  border-radius: 0 0 30px 30px;
+  border-radius: 30px;
 }
 .team-member-card-image img {
   width: 100%;
@@ -1130,6 +1147,10 @@ textarea {
 
 .ls-section.section-image {
   padding: 40px 0;
+}
+.ls-section.section-image + .ls-section.section-image {
+  padding-top: 0;
+  padding-bottom: 40px;
 }
 
 .section-image .section-dual {
@@ -1358,6 +1379,7 @@ textarea {
   flex-direction: column;
   gap: 5px;
 }
+.card-discover-more.next a,
 .card-discover-more.next .card-discover-more-content {
   align-items: flex-end;
 }
@@ -1383,11 +1405,9 @@ textarea {
   align-self: stretch;
   color: var(--color-base);
 }
-
 .footer-case-studies a{
   color: var(--color-base);
 }
-
 .footer-case-studies-header {
   display: flex;
   flex-direction: row;
@@ -1395,14 +1415,22 @@ textarea {
   justify-content: space-between;
   gap: var(--spacing-medium);
 }
-
+.footer-case-studies-description {
+  display: none;
+  color: var(--color-tint-light);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 140%;
+  letter-spacing: 0;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
 .footer-case-studies .footer-section-title {
   font-size: 3.75rem;
   font-weight: 600;
   line-height: 105%;
   letter-spacing: -2px;
 }
-
 .footer-case-studies .see-all {
   padding: 12px 0;
   display: flex;
@@ -1643,7 +1671,7 @@ textarea {
   padding-bottom: 1.25rem;
 }
 .footer-nav {
-  width: calc( 100vw - var(--spacing-small) * 2);
+  width: calc( 100% - var(--spacing-small) * 2);
   background: rgba(0, 0, 0, .4);
   background-blend-mode: multiply;
   border-radius: 20px;
@@ -1851,6 +1879,38 @@ textarea {
     --grid-col-4: 1;
   }
 
+  .running-text a {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    gap: var(--spacing-small);
+    border-radius: 40px;
+    font-weight: 400;
+    border: none;
+    cursor: pointer;
+
+    text-decoration: none;
+    font-family: var(--font-family-body);
+    font-size: 1.125rem;
+    line-height: 18px;
+    letter-spacing: 0;
+
+    color: var(--color-contrast);
+    background: var(--color-button-gradient);
+
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+
+    height:23px;
+    padding: 11px 24px 13px 26px;
+  }
+  .running-text a:before {
+    position: absolute;
+    right: 5px;
+  }
+
   .ls-section.section-header {
     width: 100vw !important;
     /* min-height: 5rem; */
@@ -1859,9 +1919,9 @@ textarea {
     top: 0;
     left: 0;
     right: 0;
-    width: calc( 100vw - var(--spacing-small) * 2);
+    width: calc( 100% - var(--spacing-small) * 2);
     z-index: 1000;
-    padding-top: 3.125rem;
+    /* padding-top: 3.125rem; */
   }
   .ls-section.section-header:has(.active) {
     border-radius: 0;
@@ -1896,6 +1956,9 @@ textarea {
     animation: opacityAnimation 0.8s ease-in-out forwards;
   }
 
+  .hero-content {
+    padding-bottom: calc(100px + var(--canvas-margin));
+  }
   .hero-headline{
     font-size: 2.25rem;
     line-height: 110%;
@@ -1942,6 +2005,10 @@ textarea {
     flex-basis: 50% !important;
   }
 
+  .section-header-body-text {
+    gap: 2.5rem;
+  }
+
   .feature-card {
     align-items: flex-start;
     gap: .9375rem;
@@ -1963,6 +2030,10 @@ textarea {
   .section-image-image {
     height: 240px;
   }
+
+  .ls-section.section-testimonial {
+    padding: 50px 0;
+  }
   
   .section-logo-cloud .section-header-headline {
     font-size: 3rem;
@@ -1978,7 +2049,123 @@ textarea {
     padding: 20px 20px;
   }
 
+  .ls-section.section-text {
+    padding-bottom: 6.25rem;
+  }
 
+  /* ---------- Team-Section Responsive ---------- */
+  .swiper-button-container {
+    display: none;
+  }
+  .team-container {
+    overflow: hidden;
+    width: calc(100vw - (var(--canvas-margin) * 2));
+    margin: 0 auto;
+  }
+  .team-container .swiper-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 40px;
+    column-gap: 10px;
+  }
+  .team-member-card-info-bio,
+  .linkedin-link {
+    display: none !important;
+  }
+  .team-member-card {
+    width: auto;
+    height: auto;
+    min-height: unset;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background: none;
+    border-radius: 0;
+
+    display: flex;
+    gap: 15px;
+  }
+  .team-member-card-image {
+    border-radius: 10px !important;
+    overflow: hidden;
+    aspect-ratio: 17/20;
+    border-radius: 0;
+  }
+  .team-member-card-image img {
+    /* width: 100vw;
+    max-width: 320px;
+    height: auto;
+    border-radius: 30px; */
+  }
+  .team-member-card-info {
+    align-items: flex-start;
+    text-align: left;
+    padding: 0;
+  }
+  /* ---------- Team Popup ---------- */
+  .team-popup {
+    display: none;
+    position: fixed;
+    z-index: 5;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: var(--color-base);
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+  }
+  .team-popup-content {
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    position: relative;
+  }
+  .team-popup-image {
+    width: 100%;
+  }
+  .team-popup-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.875rem;
+    padding: 2.5rem 1.25rem 6.25rem;
+    background: var(--color-base);
+    border-radius: 20px 20px 0 0 ;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  .team-popup-header {
+    display: flex;
+    flex-direction: row;
+    gap: 1.25rem;
+  }
+  .team-popup-name-role {
+    flex-grow: 1;
+  }
+  .team-popup-name {
+    font-size: 1.375rem;
+    font-weight: 400;
+    line-height: 1.75rem;
+    letter-spacing: 0;
+  }
+  .team-popup-role,
+  .team-popup-bio {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 140%;
+    letter-spacing: 0;
+    color: var(--color-tint-light);
+  }
+  .team-popup-linkedin {
+    display: inline-block;
+    background-color: #F2F1FA;
+    border-radius: 8px;
+    padding: 10px;
+    align-self: center;
+  }
+
+  /* ---------- Footer Responsive ---------- */
   .section-credits-list {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1998,10 +2185,37 @@ textarea {
     height: auto;
   }
 
+  /* ---------- Footer Case studies Responsive ---------- */
   .footer-case-studies .footer-section-title {
     font-size: 1.625rem;
     line-height: 110%;
     letter-spacing: -1px;
+  }
+  .footer-case-studies .swiper-wrapper {
+    width: calc(100vw - (var(--canvas-margin) * 2));
+    flex-direction: column;
+    gap: .9375rem;
+    padding: 0 var(--canvas-margin);
+  }
+  .footer-case-studies-description {
+    display: block;
+  }
+
+  .contact-form p:has(.wpcf7-submit) {
+    align-self: stretch;
+  }
+  .wpcf7-submit {
+    position: relative;
+  }
+  .wpcf7-submit::after { /* TODO: Ne fonctionne pas */
+    content: '\e5c8';
+    font-family: 'Material Icons';
+    font-size: 22px;
+    font-weight: normal;
+
+    position: absolute;
+    right: 5px;
+    top: 0;
   }
 
   input[type="text"],
@@ -2020,4 +2234,7 @@ textarea {
   .logo-cloud-logos{
     grid-template-columns: repeat(auto-fit, calc((100% - 5px) / 2));
   }
+}
+@media (min-width: 721px) {
+  .team-popup { display: none !important; }
 }

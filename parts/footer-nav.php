@@ -14,9 +14,9 @@
                 <li>London</li>
             </ul>
             <div class="footer-socials flex-basis-25">
-                <a href="#"><ion-icon name="logo-linkedin"></ion-icon></a>
-                <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
-                <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/svg/logo_x.svg"></a>
+                <a href="https://www.linkedin.com/company/lyrasports/"><ion-icon name="logo-linkedin"></ion-icon></a>
+                <a href="https://www.instagram.com/lyrasports.agency/"><ion-icon name="logo-instagram"></ion-icon></a>
+                <a href="https://x.com/lyra_sports"><img src="<?php echo get_template_directory_uri(); ?>/assets/svg/logo_x.svg"></a>
             </div>
         </div>
     </section>

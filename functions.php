@@ -12,6 +12,8 @@ function lyra_enqueue_scripts() {
   wp_enqueue_style('swiper-css', 'https://unpkg.com/swiper/swiper-bundle.min.css');
   wp_enqueue_script('swiper-js', 'https://unpkg.com/swiper/swiper-bundle.min.js', array(), null, true);
   wp_enqueue_script('swiper-init', get_template_directory_uri() . '/scripts/swiper-init.js', array('swiper-js'), null, true);
+  // Script for the team member popup on mobile
+  wp_enqueue_script('team-member-popup', get_template_directory_uri() . '/scripts/team-popup.js', array(), null, true);
 }
 add_action('wp_enqueue_scripts', 'lyra_enqueue_scripts');
 

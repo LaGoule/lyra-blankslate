@@ -15,6 +15,15 @@
             ?>
             <a href="<?php echo $category_link; ?>" class="see-all">See&nbsp;all <ion-icon name="arrow-forward-outline"></ion-icon></a>
         </div>
+        <?php 
+            // Get the description for the case studies category if it exists
+            $category_description = category_description($category->term_id);
+            if ($category_description) {
+                echo '<div class="footer-case-studies-description padding-left padding-right normal-width">';
+                echo $category_description;
+                echo '</div>';
+            }
+        ?>
 
         <div class="case-studies-container swiper-container">
             <div class="swiper-wrapper">
