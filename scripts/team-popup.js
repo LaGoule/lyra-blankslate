@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
         popupLinkedin.style.display = 'none';
       }
       popup.style.display = 'flex';
+      document.body.classList.add('no-scroll'); // Désactive le scroll
       // Change logo to back arrow
     if (logo) {
       logo.innerHTML = `
@@ -37,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('team-back-arrow').addEventListener('click', function(e) {
             e.preventDefault();
             popup.style.display = 'none';
+            document.body.classList.remove('no-scroll'); // Réactive le scroll
             // Restore logo
             logo.innerHTML = `
             <a href="/" title="Lyra" rel="home">

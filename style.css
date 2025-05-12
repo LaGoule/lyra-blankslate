@@ -66,6 +66,11 @@ body {
   padding: 0;
   margin: 0;
 }
+body.no-scroll {
+  overflow: hidden !important;
+  touch-action: none;
+  overscroll-behavior: contain;
+}
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-family-body);
@@ -591,7 +596,7 @@ textarea {
 
 .ls-section.section-hero {
   background-size: cover;
-  background-position: top center;
+  background-position: top center; 
   background-repeat: no-repeat;
   position: relative;
 
@@ -600,14 +605,17 @@ textarea {
   min-height: 660px;
   height: 100vh;
   position: relative;
+  transform: translateZ(0);
 }
 .ls-section.section-hero:before {
   content: '';
   position: absolute;
   left: 0;
+  top: 0;
   bottom: 0;
   width: 100%;
   height: 100%;
+  /* background-color: var(--color-base); */
   /* background: 
   radial-gradient(67.42% 56.95% at 103.44% 68.99%, #4FF2DF 0%, rgba(255, 253, 194, 0) 100%),
   radial-gradient(65.08% 46.99% at -13.95% 77.99%, #EABCFF 0%, #F7A197 22.27%, rgba(254, 145, 90, 0) 100%),
@@ -619,6 +627,18 @@ textarea {
   background-size: cover;
   overflow-x: hidden;
   z-index: 1;
+  transform: translateZ(0);
+}
+.ls-section.section-hero:after { 
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--color-base);
+
+  z-index: 2;
+  pointer-events: none;
 }
 /* Home is different because of the white text */
 .home .ls-section.section-hero:before {
@@ -628,7 +648,7 @@ textarea {
   content: '';
   position: absolute;
   left: 0;
-  bottom: -1px;
+  bottom: 0;
   width: 100%;
   height: 50%;
   background: linear-gradient(180deg, rgba(248, 248, 248, 0) 30%, rgba(248, 248, 248, 1) 100%);
@@ -1103,6 +1123,10 @@ textarea {
   padding-top: 6.25rem;
   padding-bottom: 9.375rem;
 }
+/* .ls-section.section-text + .ls-section.section-text {
+  padding-top: 0;
+  padding-bottom: 9.375rem;
+} */
 
 .section-header-body-text {
   display: flex;
@@ -1142,13 +1166,27 @@ textarea {
 }
 
 /* ------------------------------------ */
+/* Block: Video */
+/* ------------------------------------ */
+
+.ls-section.section-video {
+  padding: 40px 0;
+}
+.ls-section.section-video + .ls-section.section-video,
+.ls-section.section-video + .ls-section.section-image {
+  padding-top: 0;
+  padding-bottom: 40px;
+}
+
+/* ------------------------------------ */
 /* Block: Image */
 /* ------------------------------------ */
 
 .ls-section.section-image {
   padding: 40px 0;
 }
-.ls-section.section-image + .ls-section.section-image {
+.ls-section.section-image + .ls-section.section-image,
+.ls-section.section-image + .ls-section.section-video {
   padding-top: 0;
   padding-bottom: 40px;
 }
@@ -1781,6 +1819,7 @@ textarea {
 
     color: var(--color-base);
   }
+
   .main-menu-items .menu-item a {
     font-size: 1.625rem;
     font-weight: 600;
@@ -1788,6 +1827,9 @@ textarea {
     letter-spacing: -1px;
     text-transform: none;
     padding: 0;
+  }
+  .main-menu-items .menu-item a:hover {
+    background: none;
   }
   .main-menu-items.active {
     display: flex; /* Affiche le menu burger */
@@ -1816,6 +1858,15 @@ textarea {
   }
   .running-text { 
     max-width: 690px;
+  }
+
+  .section-header-case-intro {
+    flex-direction: row !important;
+    gap: 10px !important;
+    width: 100%;
+  }
+  .section-header-case-intro>* {
+    flex-basis: 50% !important;
   }
 
   .section-image-text {
@@ -1996,14 +2047,6 @@ textarea {
     line-height: 110%;
     letter-spacing: -1px;
   }
-  .section-header-case-intro {
-    flex-direction: row !important;
-    gap: 10px !important;
-    width: 100%;
-  }
-  .section-header-case-intro>* {
-    flex-basis: 50% !important;
-  }
 
   .section-header-body-text {
     gap: 2.5rem;
@@ -2117,21 +2160,33 @@ textarea {
     width: 100%;
     height: 100%;
     text-align: left;
+    display: flex;
+    flex-direction: column;
     position: relative;
+    overflow-y: auto;
+    /* hide scrollbar */
+    scrollbar-width: none;
+    -ms-overflow-style: none; /* IE and Edge */
+    &::-webkit-scrollbar {
+      display: none; /* Chrome, Safari, Opera */
+    }
   }
   .team-popup-image {
     width: 100%;
+    position: fixed;
   }
   .team-popup-info {
     display: flex;
     flex-direction: column;
     gap: 1.875rem;
+    flex: 1 1 auto;
+    overflow-y: auto;
     padding: 2.5rem 1.25rem 6.25rem;
     background: var(--color-base);
     border-radius: 20px 20px 0 0 ;
 
     position: absolute;
-    bottom: 0;
+    top: 50%;
     left: 0;
     right: 0;
   }
@@ -2156,6 +2211,11 @@ textarea {
     line-height: 140%;
     letter-spacing: 0;
     color: var(--color-tint-light);
+  }
+  .team-popup-bio {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
   }
   .team-popup-linkedin {
     display: inline-block;
