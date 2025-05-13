@@ -2,10 +2,8 @@
 
 // Import scripts
 function lyra_enqueue_scripts() {
-  // Script for dynamic font resize
-  // This script will be responsible for resizing the font based on the viewport size 
-  // Not used in the current version, but can be uncommented if needed
-  // wp_enqueue_script('dynamic-font-resize', get_template_directory_uri() . '/scripts/dynamic-font-resize.js', array('jquery'), null, true);
+  // Script to manage the scroll of body element when a popup is open
+  wp_enqueue_script('scroll-manager', get_template_directory_uri() . '/scripts/scroll-manager.js', array(), null, true);
   // Script for menu toggle
   wp_enqueue_script('menu-toggle', get_template_directory_uri() . '/scripts/menu-toggle.js', array(), null, true);
   // Script for swiper

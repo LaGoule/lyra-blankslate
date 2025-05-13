@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 // Sinon, on instancie Swiper
                 container.swiperInstance = new Swiper(container, {
                     slidesPerView: 2.45,
+                    slidesPerGroup: 2.45,
                     spaceBetween: 30,
                     navigation: {
                         nextEl: '.swiper-button-next-team',

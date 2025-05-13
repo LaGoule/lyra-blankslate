@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const popupLinkedin = popup.querySelector('.team-popup-linkedin');
   const closeBtn = popup.querySelector('.team-popup-close');
   const logo = document.querySelector('.site-logo');
+  const toggleBtn = document.getElementById('menu-toggle');
 
   document.querySelectorAll('.team-member-card').forEach(card => {
     card.addEventListener('click', function () {
@@ -25,11 +26,12 @@ document.addEventListener('DOMContentLoaded', function () {
         popupLinkedin.style.display = 'none';
       }
       popup.style.display = 'flex';
-      document.body.classList.add('no-scroll'); // Désactive le scroll
+      toggleBtn.style.display = 'none';
+      updateNoScroll();
       // Change logo to back arrow
     if (logo) {
       logo.innerHTML = `
-        <a href="#" id="team-back-arrow" class="back-arrow" title="Back to team" rel="home">
+        <a href="#" id="team-back-arrow" class="back-arrow" title="Back to team">
             <img src="${window.themeUrl}/assets/svg/back_arrow.svg" alt="Back" />
         </a>
         `;
@@ -38,7 +40,8 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('team-back-arrow').addEventListener('click', function(e) {
             e.preventDefault();
             popup.style.display = 'none';
-            document.body.classList.remove('no-scroll'); // Réactive le scroll
+            toggleBtn.style.display = 'flex';
+            updateNoScroll();
             // Restore logo
             logo.innerHTML = `
             <a href="/" title="Lyra" rel="home">
@@ -46,6 +49,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 <img class="main-logo" width="103px" height="31.06px" src="${window.themeUrl}/assets/svg/lyra_01_logotype_white_rgb.svg" alt="Lyra" itemprop="logo">
             </a>
             `;
+            // Scroll to team section if it exists
+            const teamSection = document.getElementById('team-section');
+            if (teamSection) {
+                teamSection.scrollIntoView({ behavior: 'smooth' });
+            }
         });
     }
     });
