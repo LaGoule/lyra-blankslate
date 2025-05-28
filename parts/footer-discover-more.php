@@ -24,7 +24,13 @@
             <div class="card-discover-more previous flex-basis-50">
                 <?php if ($previous_article) : ?>
                     <a href="<?php echo $previous_article_url; ?>" class="card-link">
-                        <img src="<?php echo $previous_article_image; ?>" alt="<?php echo $previous_article_title; ?>" class="card-discover-more-image">
+                        <?php if ($previous_article_image): ?>
+                            <img src="<?php echo $previous_article_image; ?>" alt="<?php echo $previous_article_title; ?>" class="card-discover-more-image">
+                        <?php else: ?>
+                            <div class="card-discover-more-image" style="background:#e0e0e0; display:flex; align-items:center; justify-content:center;">
+                                <span style="color:#aaa; font-size:1.2rem;">No image</span>
+                            </div>
+                        <?php endif; ?>
                         <div class="card-discover-more-content">
                             <h5 class="card-discover-more-title"><?php echo $previous_article_title; ?></h5>
                             <p class="card-discover-more-keyword">Previous</p>
@@ -35,7 +41,13 @@
             <div class="card-discover-more next flex-basis-50">
                 <?php if ($next_article) : ?>
                     <a href="<?php echo $next_article_url; ?>" class="card-discover-more-link">
-                        <img src="<?php echo $next_article_image; ?>" alt="<?php echo $next_article_title; ?>" class="card-discover-more-image">
+                        <?php if ($next_article_image): ?>
+                            <img src="<?php echo $next_article_image; ?>" alt="<?php echo $next_article_title; ?>" class="card-discover-more-image">
+                        <?php else: ?>
+                            <div class="card-discover-more-image" style="background:#e0e0e0; display:flex; align-items:center; justify-content:center;">
+                                <span style="color:#aaa; font-size:1.2rem;">No image</span>
+                            </div>
+                        <?php endif; ?>
                         <div class="card-discover-more-content">
                             <h5 class="card-discover-more-title"><?php echo $next_article_title; ?></h5>
                             <p class="card-discover-more-keyword">Next</p>

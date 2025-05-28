@@ -10,8 +10,9 @@
             <ul class="footer-cities flex-basis-50">
                 <li>Madrid</li>
                 <li>Mexico City</li>
-                <li>Dubai</li>
                 <li>London</li>
+                <li>Dubai</li>
+                <li>Medellín</li>
             </ul>
             <div class="footer-socials flex-basis-25">
                 <a href="https://www.linkedin.com/company/lyrasports/"><ion-icon name="logo-linkedin"></ion-icon></a>

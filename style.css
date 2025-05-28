@@ -799,6 +799,7 @@ textarea {
 .feature-cards-container {
   display: grid;
   grid-template-columns: repeat(var(--grid-col-4), 1fr); 
+  align-items: flex-start !important;
 }
 
 .feature-card {
@@ -866,6 +867,7 @@ textarea {
   color: var(--color-tint-light);
   margin: 0;
   padding-top: 0.5rem;
+  
 }
 .card-hint {
   font-weight: 300;
@@ -1706,6 +1708,32 @@ textarea {
   display: flex;
   flex: 1 0 calc(100% - 24px * 2);
 }
+.contact-form .selected-dial-code{
+  min-width: 84px;
+  text-indent: 0;
+}
+.contact-form .wpcf7-phonetext{
+  padding-left: 110px !important;
+}
+.contact-form .country-list {
+  text-indent: 0;
+  flex-direction: column;
+  flex: none;
+  overflow-x: hidden;
+  border-radius: 10px;
+}
+.contact-form .country-list .country {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--spacing-small);
+  padding: 10px 15px;
+}
+.contact-form .country-list .flag-box,
+.contact-form .country-list .country-name,
+.contact-form .country-list .country-code {
+  flex: 1;
+}
 .contact-form p:has(.wpcf7-submit) {
   display: flex;
   flex-direction: row;
@@ -1768,7 +1796,7 @@ textarea {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  flex-grow: 2;
+  flex: 1 0 50%;
   padding-right: 10px;
 
   font-size: 1.125rem;

@@ -16,7 +16,11 @@
                     <div id="branding" class="section-dual nowarp align-center">
                         <div id="site-title" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
                             <div class="site-logo">
-                                <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" rel="home">
+                                <?php
+                                    $is_home = ( is_front_page() || is_home() );
+                                    $logo_link = $is_home ? '#' : esc_url( home_url( '/' ) );
+                                ?>
+                                <a href="<?php echo $logo_link; ?>" title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" rel="home">
                                     <img class="main-logo" width="15.72px" height="31.06px" src="<?php echo get_template_directory_uri(); ?>/assets/svg/lyra_02_symbol_white_rgb.svg" alt="Symbol" style="margin-right: 16px;">
                                     <img class="main-logo" width="103px" height="31.06px" src="<?php echo get_template_directory_uri(); ?>/assets/svg/lyra_01_logotype_white_rgb.svg" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" itemprop="logo">
                                 </a>
@@ -41,7 +45,7 @@
                         <div class="language-switcher" style="display: none;">
                             <?php
                             if (function_exists('pll_the_languages')) {
-                                pll_the_languages(array('dropdown' => 0));
+                                // pll_the_languages(array('dropdown' => 0));
                             }
                             ?>
                         </div>

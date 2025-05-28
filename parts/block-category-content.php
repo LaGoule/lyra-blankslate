@@ -37,6 +37,10 @@
                             <?php if (has_post_thumbnail()) : ?>
                                 <div class="post-card-thumbnail" style="background-image: url('<?php echo esc_url(get_the_post_thumbnail_url()); ?>');">
                                 </div>
+                            <?php else : ?>
+                                <div class="post-card-thumbnail" style="background: #e0e0e0; display: flex; align-items: center; justify-content: center;">
+                                    <span style="color: #aaa; font-size: 1.2rem;">No image</span>
+                                </div>
                             <?php endif; ?>
                             <h2 class="post-card-title"><?php the_title(); ?></h2>
                         </a>

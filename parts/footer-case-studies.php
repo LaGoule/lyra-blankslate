@@ -40,7 +40,13 @@
                         ?>
                         <article class="case-study-card swiper-slide">
                             <div class="card-image">
-                                <img src="<?php echo esc_url($thumbnail); ?>" alt="<?php the_title_attribute(); ?>">
+                                <?php if ($thumbnail): ?>
+                                    <img src="<?php echo esc_url($thumbnail); ?>" alt="<?php the_title_attribute(); ?>">
+                                <?php else: ?>
+                                    <div style="width:100%; height:100%; background: #e0e0e0; display: flex; align-items: center; justify-content: center;">
+                                        <span style="color: #aaa; font-size: 1.2rem;">No image</span>
+                                    </div>
+                                <?php endif; ?>
                             </div>
                             <a href="<?php the_permalink(); ?>" class="case-study-link">
                                 <div class="case-study-overlay">
