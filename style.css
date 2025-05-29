@@ -420,6 +420,10 @@ textarea {
   align-items: stretch !important;
 }
 
+
+.flex-basis-10 {
+  flex-basis: 10%;
+}
 .flex-basis-25 {
   flex-basis: 25%;
 }
@@ -428,6 +432,9 @@ textarea {
 }
 .flex-basis-50 {
   flex-basis: 50%;
+}
+.flex-basis-80 {
+  flex-basis: 80%;
 }
 
 .gap-5 {
@@ -1306,6 +1313,11 @@ textarea {
 
 .footer-contact-us{
   padding: 6.25rem 0;
+}
+
+.footer-contact-us .flag-container:has(.hide) {
+  border-radius: 12px 0 0 12px;
+  overflow: hidden;
 }
 
 #content .ls-section:last-of-type:not(.section-hero)::before,
@@ -2200,12 +2212,19 @@ textarea {
     overflow: hidden;
     aspect-ratio: 17/20;
     border-radius: 0;
+    width: 100%;
   }
   .team-member-card-image img {
     /* width: 100vw;
     max-width: 320px;
     height: auto;
     border-radius: 30px; */
+  }
+  .team-noimage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
   }
   .team-member-card-info {
     align-items: flex-start;
@@ -2248,7 +2267,8 @@ textarea {
       display: none; /* Chrome, Safari, Opera */
     }
   }
-  .team-popup-image {
+  .team-popup-image,
+  .team-popup-no-image {
     width: 100%;
     position: fixed;
   }

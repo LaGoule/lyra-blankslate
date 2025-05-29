@@ -31,7 +31,7 @@
                 $case_studies = new WP_Query(array(
                     'post_type' => 'post',
                     'category_name' => 'case-studies',
-                    'posts_per_page' => 6,
+                    'posts_per_page' => 4,
                 ));
 
                 if ($case_studies->have_posts()) :

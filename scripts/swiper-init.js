@@ -27,14 +27,16 @@ document.addEventListener("DOMContentLoaded", function () {
                 // Sinon, on instancie Swiper
                 container.swiperInstance = new Swiper(container, {
                     slidesPerView: 2.45,
-                    slidesPerGroup: 2.45,
+                    slidesPerGroup: 1,
                     spaceBetween: 30,
+                    speed: 500,
+                    // loop: true,
                     navigation: {
                         nextEl: '.swiper-button-next-team',
                         prevEl: '.swiper-button-prev-team',
                     },
                     slidesOffsetBefore: dynamicMargin,
-                    slidesOffsetAfter: dynamicMargin,
+                    slidesOffsetAfter: dynamicMargin + 500,
                     autoHeight: false,
                     freeMode: false,
                     grabCursor: true,

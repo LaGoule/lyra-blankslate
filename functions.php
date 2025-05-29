@@ -71,5 +71,21 @@ function add_page_slug_body_class( $classes ) {
   }
   return $classes;
 }
-
 add_filter( 'body_class', 'add_page_slug_body_class' );
+
+// Add ACF Configurations Pages (General Settings and Footer)
+if (function_exists('acf_add_options_page')) {
+    acf_add_options_page(array(
+        'page_title'    => 'Theme General Settings',
+        'menu_title'    => 'Theme General Settings',
+        'menu_slug'     => 'theme-general-settings',
+        'capability'    => 'edit_posts',
+        'redirect'      => false
+    ));
+    
+    acf_add_options_sub_page(array(
+        'page_title'    => 'Footer settings',
+        'menu_title'    => 'Footer settings',
+        'parent_slug'   => 'theme-general-settings',
+    ));
+}

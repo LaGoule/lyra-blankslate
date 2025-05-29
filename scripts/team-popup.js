@@ -13,8 +13,29 @@ document.addEventListener('DOMContentLoaded', function () {
 
   document.querySelectorAll('.team-member-card').forEach(card => {
     card.addEventListener('click', function () {
-      popupImg.src = card.querySelector('.team-member-card-image img').src;
-      popupImg.alt = card.querySelector('.team-member-card-info-name').textContent;
+      
+      // Vérification de l'existence de l'image
+      const imgElement = card.querySelector('.team-member-card-image img');
+      
+      if (imgElement) {
+        // Si l'image existe, on affiche l'image
+        popupImg.src = imgElement.src;
+        popupImg.alt = card.querySelector('.team-member-card-info-name').textContent;
+        popupImg.style.display = ''; // Assurez-vous que l'image est visible
+      } else {
+        // Si pas d'image, on masque l'élément img et on affiche le placeholder
+        popupImg.style.display = 'none';
+        
+        // On peut insérer un div de placeholder avant l'image
+        if (!popup.querySelector('.team-no-image')) {
+          const placeholder = document.createElement('div');
+          placeholder.className = 'team-popup-no-image';
+          placeholder.style = 'width: 100%; height: 100%; background: #e0e0e0; display: flex; align-items: center; justify-content: center;';
+          placeholder.innerHTML = '<span style="color: #aaa; font-size: 1.2rem;">No image</span>';
+          popupImg.parentNode.insertBefore(placeholder, popupImg);
+        }
+      }
+
       popupName.textContent = card.querySelector('.team-member-card-info-name').textContent;
       popupRole.textContent = card.querySelector('.team-member-card-info-role').textContent;
       popupBio.innerHTML = card.querySelector('.team-member-card-info-bio').innerHTML;

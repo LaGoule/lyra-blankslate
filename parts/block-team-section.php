@@ -39,7 +39,13 @@
                         ?>
                             <article class="team-member-card swiper-slide">
                                     <div class="team-member-card-image">
-                                        <img src="<?php echo esc_url($picture['url']); ?>" alt="<?php echo esc_attr($name); ?>" lazyload="loaded">
+                                        <?php if ($picture) : ?>
+                                            <img src="<?php echo esc_url($picture['url']); ?>" alt="<?php echo esc_attr($name); ?>" lazyload="loaded">
+                                        <?php else : ?>
+                                            <div class="team-no-image" style="width: 100%; height: 100%; background: #e0e0e0; display: flex; align-items: center; justify-content: center;">
+                                                <span style="color: #aaa; font-size: 1.2rem;">No image</span>
+                                            </div>
+                                        <?php endif; ?>
                                     </div>
                                     <div class="team-member-card-info">
                                         <h3 class="team-member-card-info-name"><?php echo $name; ?></h3>
