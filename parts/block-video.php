@@ -18,7 +18,7 @@
                 <div class="video-container section-image-image image-container flex-basis-100">
                     <video class="video-media" preload="auto" controls 
                         style="width: 100%; height: 100%;">
-                        <source src="<?php echo $video; ?>" type="video/mp4">
+                        <source src="<?php echo $video['url']; ?>" type="video/mp4">
                     </video>
                 </div>
             </div>

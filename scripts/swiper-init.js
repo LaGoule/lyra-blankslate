@@ -25,6 +25,15 @@ document.addEventListener("DOMContentLoaded", function () {
                 container.swiperInstance.update();
             } else {
                 // Sinon, on instancie Swiper
+                // Calcule slidesOffsetAfter dynamiquement selon la largeur de la fenêtre
+                let slidesOffsetAfter;
+                if (window.innerWidth < widthMaxContent) {
+                    slidesOffsetAfter = dynamicMargin + 160;
+                } else {
+                    // Par exemple, ajoute 10% de la différence entre window et widthMaxContent
+                    slidesOffsetAfter = dynamicMargin + Math.round((window.innerWidth - widthMaxContent) * 0.1);
+                }
+
                 container.swiperInstance = new Swiper(container, {
                     slidesPerView: 2.45,
                     slidesPerGroup: 1,
@@ -36,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         prevEl: '.swiper-button-prev-team',
                     },
                     slidesOffsetBefore: dynamicMargin,
-                    slidesOffsetAfter: dynamicMargin + 500,
+                    slidesOffsetAfter: dynamicMargin + 160,
                     autoHeight: false,
                     freeMode: false,
                     grabCursor: true,

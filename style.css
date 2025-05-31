@@ -1229,6 +1229,10 @@ textarea {
   padding-top: 0;
   padding-bottom: 40px;
 }
+.ls-section.section-image + .ls-section.section-text,
+.ls-section.section-image + .ls-section.section-testimonial {
+  padding-top: 0;
+}
 
 .section-image .section-dual {
   align-items: stretch !important;
@@ -1922,6 +1926,7 @@ textarea {
   .section-dual:not(.nowrap) {
     flex-direction: column;
     gap: var(--spacing-large);
+    width: 100%;
   }
   .section-dual.reverse:not(.nowrap) {
     flex-direction: column-reverse;
