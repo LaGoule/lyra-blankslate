@@ -290,9 +290,7 @@ textarea {
   line-height: 140%;
   letter-spacing: 0;
 }
-.running-text a {
-}
-.running-text a:before {
+.running-text p:last-of-type > a:last-child:before {
   font-family: "Material Icons";
   font-size: 1.25rem;
   content: "arrow_forward";
@@ -349,6 +347,7 @@ textarea {
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
+  align-self: stretch;
 }
 
 .grid-4 {
@@ -1198,6 +1197,7 @@ textarea {
   border: 1px solid #BCBCBC;
 
   color: var(--color-contrast);
+  background-color: var(--color-base);
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 18px;
@@ -1512,7 +1512,7 @@ textarea {
   font-weight: 400;
   line-height: 140%;
   letter-spacing: 0;
-  margin-top: 30px;
+  margin-top: var(--spacing-large);
   margin-bottom: 40px;
 }
 .footer-case-studies .footer-section-title {
@@ -1522,7 +1522,7 @@ textarea {
   letter-spacing: -2px;
 }
 .footer-case-studies .see-all {
-  padding: 12px 0;
+  /* padding: 12px 0; */
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
@@ -1750,6 +1750,10 @@ textarea {
 .contact-form .country-list .country-code {
   flex: 1;
 }
+.intl-tel-input .country-list .country.preferred,
+.intl-tel-input .divider {
+  display: none;
+}
 .contact-form p:has(.wpcf7-submit) {
   display: flex;
   flex-direction: row;
@@ -1925,7 +1929,8 @@ textarea {
 
   .section-dual:not(.nowrap) {
     flex-direction: column;
-    gap: var(--spacing-large);
+    column-gap: var(--spacing-large);
+    row-gap: var(--spacing-large);
     width: 100%;
   }
   .section-dual.reverse:not(.nowrap) {
@@ -2009,7 +2014,7 @@ textarea {
     --grid-col-4: 1;
   }
 
-  .running-text a {
+  .running-text p:last-of-type > a:last-child {
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -2036,7 +2041,7 @@ textarea {
     height:23px;
     padding: 11px 24px 13px 26px;
   }
-  .running-text a:before {
+  .running-text p:last-of-type > a:last-child:before {
     position: absolute;
     right: 5px;
   }

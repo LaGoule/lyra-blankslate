@@ -100,7 +100,7 @@ if (is_category()) {
                         <?php echo get_the_title(); ?>
                     <?php endif; ?>
                 </h3>
-                <h1 class="hero-headline alt <?php echo esc_attr($headline_size); ?>"><?php echo esc_html($headline); ?></h1>
+                <h1 class="hero-headline alt <?php echo esc_attr($headline_size); ?>"><?php echo $headline ? esc_html($headline) : get_the_title(); ?></h1>
             <?php endif; ?>
             <div class="hero-arrow">
                 <a href="#the-content" class="scroll-down">

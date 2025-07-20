@@ -55,7 +55,7 @@
                                         </div>
                                     </div>
                                     <?php if ($linkedin_url) : ?>
-                                        <a class="linkedin-link" href="<?php echo $linkedin_url ?>" title="LinkedIn Profile">
+                                        <a class="linkedin-link" target="_blank" href="<?php echo $linkedin_url ?>" title="LinkedIn Profile">
                                             <img src="<?php echo get_template_directory_uri(); ?>/assets/svg/logo_linkedin.svg" alt="LinkedIn" class="linkedin-icon">
                                         </a>
                                     <?php endif; ?>
@@ -76,7 +76,7 @@
                                     <h3 class="team-popup-name"></h3>
                                     <p class="team-popup-role"></p>
                                 </div>
-                                <a class="team-popup-linkedin" href="#" target="_blank" rel="noopener">
+                                <a class="team-popup-linkedin" target="_blank" href="#" target="_blank" rel="noopener">
                                     <img src="<?php echo get_template_directory_uri(); ?>/assets/svg/logo_linkedin.svg" alt="LinkedIn">
                                 </a>
                             </div>
